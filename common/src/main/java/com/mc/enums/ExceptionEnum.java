@@ -1,12 +1,6 @@
 package com.mc.enums;
 
-/**
- * @ClassName ResultEnum
- * @Author ZhengRongZe
- * @Date 2018/7/29 10:26
- **/
-
-public enum  ResultEnum {
+public enum ExceptionEnum {
     UNKNOWN_ERROR(-100, "未知错误"),
     NEED_LOGIN(-1, "未登录"),
     REPEAT_REGISTER(-2, "该用户已注册"),
@@ -19,7 +13,7 @@ public enum  ResultEnum {
     private Integer code;
     private String msg;
 
-    ResultEnum(Integer code, String msg) {
+    ExceptionEnum(Integer code, String msg) {
         this.code = code;
         this.msg = msg;
     }

@@ -1,6 +1,6 @@
 package com.mc.utils;
 
-import com.mc.enums.ResultEnum;
+import com.mc.enums.ExceptionEnum;
 import com.mc.response.ResponseMessage;
 
 /**
@@ -16,8 +16,8 @@ public class ResultUtil {
      */
     public static ResponseMessage success(Object object){
         ResponseMessage responseMessage = new ResponseMessage();
-        responseMessage.setCode(ResultEnum.SUCCESS.getCode());
-        responseMessage.setMsg(ResultEnum.SUCCESS.getMsg());
+        responseMessage.setCode(ExceptionEnum.SUCCESS.getCode());
+        responseMessage.setMsg(ExceptionEnum.SUCCESS.getMsg());
         responseMessage.setData(object);
         return responseMessage;
     }
@@ -44,13 +44,13 @@ public class ResultUtil {
     }
     /**
      * 操作失败返回消息，对error的重载
-     * @param resultEnum
+     * @param exceptionEnum
      * @return
      */
-    public static ResponseMessage error(ResultEnum resultEnum){
+    public static ResponseMessage error(ExceptionEnum exceptionEnum){
         ResponseMessage responseMessage = new ResponseMessage();
-        responseMessage.setCode(resultEnum.getCode());
-        responseMessage.setMsg(resultEnum.getMsg());
+        responseMessage.setCode(exceptionEnum.getCode());
+        responseMessage.setMsg(exceptionEnum.getMsg());
         return responseMessage;
     }
 }
