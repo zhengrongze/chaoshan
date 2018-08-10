@@ -21,6 +21,7 @@ public class UserController {
     private UserService userService;
     @RequestMapping("/test")
     public String add(){
+
         userService.add();
         return "success";
     }

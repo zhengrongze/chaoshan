@@ -3,5 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mc.mapper.UserMapper">
-
+    <insert id="foreachinsert">
+        insert into user
+              (id,username,password)
+        values
+        <foreach collection="list" item="user" separator=",">
+            (#{user.id},#{user.username},#{user.password})
+        </foreach>
+    </insert>
+    <delete id="deleteforecah">
+        delete * from user where id in
+        <foreach collection="list" item="list" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
 </mapper>
