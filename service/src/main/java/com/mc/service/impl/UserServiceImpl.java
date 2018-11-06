@@ -49,4 +49,9 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
     public void delete(List<Integer> list) {
         userMapper.deleteforecah(list);
     }
+
+    @Override
+    public List<User> oneToOne() {
+        return userMapper.userInnerJoinCompany();
+    }
 }

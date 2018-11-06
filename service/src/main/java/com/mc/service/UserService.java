@@ -8,4 +8,5 @@ public interface UserService {
     void add();
     void inse(List<User> list);
     void delete(List<Integer> list);
+    List<User> oneToOne();
 }

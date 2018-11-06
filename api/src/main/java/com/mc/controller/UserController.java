@@ -1,13 +1,12 @@
 package com.mc.controller;
 
-import com.mc.enums.ExceptionEnum;
-import com.mc.exception.OverException;
+import com.mc.entity.User;
 import com.mc.service.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @ClassName UserController
@@ -19,10 +18,15 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
     @RequestMapping("/test")
     public String add(){
 
         userService.add();
         return "success";
+    }
+    @RequestMapping("/oneToOne")
+    public List<User> oneToOne(){
+        return userService.oneToOne();
     }
 }

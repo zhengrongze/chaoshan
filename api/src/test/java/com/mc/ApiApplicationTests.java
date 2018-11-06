@@ -22,6 +22,7 @@ public class ApiApplicationTests {
 
 		System.out.println(String.format(ss,"headPic/defaultFactoryIcon1.png"));
 	}
+
 	@Test
 	public void test(){
 //		Long start = System.currentTimeMillis();

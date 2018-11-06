@@ -11,4 +11,5 @@ import java.util.List;
 public interface UserMapper extends MyMapper<User> {
     void foreachinsert(List<User> list);
     void deleteforecah(List<Integer> list);
+    List<User> userInnerJoinCompany();
 }

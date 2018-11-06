@@ -8,6 +8,12 @@ public class OverException extends RuntimeException {
 
     private Integer code;
 
+    private String message;
+
+    public OverException(String message) {
+        this.message = message;
+    }
+
     /**
      * 继承exception，加入错误状态值
      * @param exceptionEnum
@@ -18,7 +24,7 @@ public class OverException extends RuntimeException {
     }
 
     public OverException(String message, Integer code) {
-        super(message);
+        this.message = message;
         this.code = code;
     }
 }
