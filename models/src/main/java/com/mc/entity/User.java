@@ -8,8 +8,10 @@ import lombok.Data;
  * @Date 2018/7/25 21:51
  **/
 @Data
-public class User {
+public class User{
     private Integer id;
     private String username;
     private String password;
+    private Company company;
+   
 }

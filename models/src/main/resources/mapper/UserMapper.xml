@@ -3,5 +3,33 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mc.mapper.UserMapper">
-
+    <insert id="foreachinsert">
+        insert into user
+              (id,username,password)
+        values
+        <foreach collection="list" item="user" separator=",">
+            (#{user.id},#{user.username},#{user.password})
+        </foreach>
+    </insert>
+    <delete id="deleteforecah">
+        delete * from user where id in
+        <foreach collection="list" item="list" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <resultMap id="oneToOne" type="User">
+        <id column="id" property="id" />
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <association property="company" javaType="Company">
+            <id column="id" property="id"/>
+            <result column="user_id" property="userId"/>
+            <result column="company_name" property="companyName"/>
+            <result column="status" property="status"/>
+            <result column="is_vip" property="isVip"/>
+        </association>
+    </resultMap>
+    <select id="userInnerJoinCompany" resultMap="oneToOne">
+        select u.*,c.* from user u inner join company c on u.id = c.user_id and is_vip = 1
+    </select>
 </mapper>
