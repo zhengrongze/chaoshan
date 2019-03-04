@@ -1,5 +1,6 @@
 package com.mc.controller;
 
+import com.mc.entity.User;
 import com.mc.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +20,10 @@ public class UserController {
     private UserService userService;
     @RequestMapping("/test")
     public String add(){
-        userService.add();
+        User user = new User();
+        user.setUsername("rongze");
+        user.setPassword("123456");
+        userService.save(user);
         return "success";
     }
 }

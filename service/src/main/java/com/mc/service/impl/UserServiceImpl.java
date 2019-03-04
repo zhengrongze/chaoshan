@@ -11,29 +11,28 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
+
 /**
  * @ClassName UserServiceImpl
  * @Author ZhengRongZe
  * @Date 2018/7/25 22:29
  **/
 @Service
-public class UserServiceImpl extends BaseServiceImpl implements UserService {
+public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+    private  Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Autowired
     private UserMapper userMapper;
-
+    @Resource
+    public void setUserMapper(UserMapper userMapper) {
+        this.userMapper = userMapper;
+        super.setMyMapper(userMapper);
+    }
     @Transactional
     @Override
-    public void add() {
-        User user = new User();
-        user.setUsername("rongze");
-        user.setPassword("123456");
-        LOGGER.debug("=======DEBUG=======");
-        LOGGER.info("========INFO====dss是打算大所大所===");
-        LOGGER.warn("========WARN=======");
-        LOGGER.error("=======ERROR=======");
-        userMapper.insert(user);
+    public void save(User eniity) {
+        userMapper.insert(eniity);
     }
 }

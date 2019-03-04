@@ -1,5 +1,6 @@
 package com.mc.service;
 
-public interface UserService {
-    void add();
+import com.mc.entity.User;
+
+public interface UserService extends BaseService<User>{
 }

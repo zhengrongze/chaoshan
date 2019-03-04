@@ -10,7 +10,7 @@ import java.util.Map;
  **/
 public class SwitchTest {
     public static Map<String,List> get(int num){
-        Map<String,List> map = new HashMap<String, List>();
+        Map<String,List> map = new HashMap<String, List>(); 
         switch (num){
             case 1:
                 map.put("风格",new ArrayList());
