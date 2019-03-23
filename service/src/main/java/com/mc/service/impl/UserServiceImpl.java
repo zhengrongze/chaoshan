@@ -2,16 +2,14 @@ package com.mc.service.impl;
 
 import com.mc.entity.User;
 import com.mc.mapper.UserMapper;
-import com.mc.service.BaseService;
 import com.mc.service.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.mc.utils.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @ClassName UserServiceImpl
@@ -21,8 +19,7 @@ import javax.annotation.Resource;
 @Service
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
 
-    private  Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
-
+    private Logger logger = Logger.getLogger(this.getClass());
     @Autowired
     private UserMapper userMapper;
     @Resource
@@ -34,5 +31,10 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     @Override
     public void save(User eniity) {
         userMapper.insert(eniity);
+    }
+
+    @Override
+    public void insertUser(User user) {
+        userMapper.insertUser(user);
     }
 }
