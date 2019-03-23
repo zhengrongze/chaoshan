@@ -13,14 +13,5 @@
         <module name="service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="api" target="1.8" />
-      <module name="chaoshan" target="1.5" />
-      <module name="common" target="1.5" />
-      <module name="dao" target="1.5" />
-      <module name="models" target="1.5" />
-      <module name="other" target="1.5" />
-      <module name="service" target="1.6" />
-    </bytecodeTargetLevel>
   </component>
 </project>
