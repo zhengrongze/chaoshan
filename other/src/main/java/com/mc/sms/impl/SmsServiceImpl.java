@@ -5,6 +5,7 @@ import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
+import com.mc.constant.SmsConstant;
 import com.mc.sms.SmsService;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +20,6 @@ public class SmsServiceImpl implements SmsService{
         request.setVersion("2017-05-25");
         request.setAction("SendSms");
         request.putQueryParameter("PhoneNumbers",phone);
+        request.putQueryParameter("SignName", SmsConstant.SIGN_NAME);
     }
 }
