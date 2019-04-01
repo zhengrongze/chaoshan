@@ -13,7 +13,6 @@
         <module name="service" />
       </profile>
     </annotationProcessing>
-<<<<<<< HEAD
     <bytecodeTargetLevel>
       <module name="api" target="1.8" />
       <module name="chaoshan" target="1.5" />
@@ -22,7 +21,5 @@
       <module name="other" target="1.5" />
       <module name="service" target="1.6" />
     </bytecodeTargetLevel>
-=======
->>>>>>> a54e1a8d53334c72395b986158e43b73a1ee0191
   </component>
 </project>
