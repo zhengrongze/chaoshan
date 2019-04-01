@@ -1,11 +1,19 @@
 package com.mc.aop;
 
+<<<<<<< HEAD
 import com.mc.utils.Logger;
+=======
+>>>>>>> a54e1a8d53334c72395b986158e43b73a1ee0191
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+<<<<<<< HEAD
+=======
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+>>>>>>> a54e1a8d53334c72395b986158e43b73a1ee0191
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -18,7 +26,11 @@ import java.util.Arrays;
 @Component
 public class WebLogAspect {
 
+<<<<<<< HEAD
     private final Logger logger = Logger.getLogger(this.getClass());
+=======
+    private Logger logger = LoggerFactory.getLogger(WebLogAspect.class);
+>>>>>>> a54e1a8d53334c72395b986158e43b73a1ee0191
 
     @Pointcut("execution(public * com.mc.controller.*.*(..))")
     public void webLog(){}

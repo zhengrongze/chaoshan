@@ -3,6 +3,9 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+<<<<<<< HEAD
     <mapping directory="E:\ideaproperties\chaoshan\chaoshan" vcs="Git" />
+=======
+>>>>>>> a54e1a8d53334c72395b986158e43b73a1ee0191
   </component>
 </project>

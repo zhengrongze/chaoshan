@@ -9,6 +9,14 @@ import org.springframework.web.servlet.handler.MappedInterceptor;
 
 import java.util.Properties;
 
+<<<<<<< HEAD
+=======
+/**
+ * @ClassName MybatisSQLInterceptor
+ * @Author ZhengRongZe
+ * @Date 2019/1/26 14:02
+ **/
+>>>>>>> a54e1a8d53334c72395b986158e43b73a1ee0191
 @Intercepts(@Signature(type = Executor.class,method = "update",
 args = {MappedStatement.class,Object.class, RowBounds.class, ResultHandler.class}))
 public class MybatisSQLInterceptor implements Interceptor {
